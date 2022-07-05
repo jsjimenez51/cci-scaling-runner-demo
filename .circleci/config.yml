@@ -26,7 +26,7 @@ jobs:
 
   scale:
     machine: true
-    resource_class: jsjimenez51/macos-class
+    resource_class: jsjimenez51/docker-class
     steps:
       - checkout
       - run: uname
