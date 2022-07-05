@@ -1,10 +1,9 @@
 version: 2.1
 
 workflows:
-  
   testing:
-      jobs:
-        - runner-test
+    jobs:
+      - runner-test
  
   #   jobs:
   #     - runner1
@@ -25,7 +24,7 @@ jobs:
     machine: true
     resource_class: jsjimenez51/scaling-docker-class
     steps:
-      -run: echo "Hi I got my scaling class running"
+      - run: echo "Hi I'm on Runners!"
   
   # linux-runner: 
   #   machine: true
