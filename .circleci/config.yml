@@ -1,22 +1,32 @@
 version: 2.1
 
 workflows:
+  
   testing:
-    jobs:
-      - runner1
-      - runner2
-      - runner3
-      - runner4
-      - runner5
-      - runner6
-  scaling:
-    jobs:
-      - scale
+      jobs:
+        - runner-test
+ 
+  #   jobs:
+  #     - runner1
+  #     - runner2
+  #     - runner3
+  #     - runner4
+  #     - runner5
+  #     - runner6
+  # scaling:
+  #   jobs:
+  #     - scale
   # linux:
   #   jobs:
   #     - linux-runner
 
 jobs:
+  runner-test:
+    machine: true
+    resource_class: jsjimenez51/scaling-docker-class
+      steps:
+        -run: echo "Hi I got my scaling class running"
+  
   # linux-runner: 
   #   machine: true
   #   resource_class: jsjimenez51/ubuntu-resource-class
@@ -24,41 +34,41 @@ jobs:
   #     - run: echo "Hi I'm Running on an Ubuntu Server!"
   #     - run: uname
 
-  scale:
-    machine: true
-    resource_class: jsjimenez51/scaling-docker-runner
-    steps:
-      - checkout
-      - run: uname
-      - run: ./scale.sh
+  # scale:
+  #   machine: true
+  #   resource_class: jsjimenez51/scaling-docker-runner
+  #   steps:
+  #     - checkout
+  #     - run: uname
+  #     - run: ./scale.sh
 
-  runner1:
-    machine: true
-    resource_class: jsjimenez51/scaling-docker-runner
-    steps:
-      - run: echo "Hi I'm runner job 1!"
-  runner2:
-    machine: true
-    resource_class: jsjimenez51/scaling-docker-runner
-    steps:
-      - run: echo "Hi I'm runner job 2!"
-  runner3:
-    machine: true
-    resource_class: jsjimenez51/scaling-docker-runner
-    steps:
-      - run: echo "Hi I'm runner job 3!"
-  runner4:
-    machine: true
-    resource_class: jsjimenez51/scaling-docker-runner
-    steps:
-      - run: echo "Hi I'm runner job 4!!"
-  runner5:
-    machine: true
-    resource_class: jsjimenez51/scaling-docker-runner
-    steps:
-      - run: echo "Hi I'm runner job 5!"
-  runner6:
-    machine: true
-    resource_class: jsjimenez51/scaling-docker-runner
-    steps:
-      - run: echo "Hi I'm runner job 6!"
+  # runner1:
+  #   machine: true
+  #   resource_class: jsjimenez51/scaling-docker-runner
+  #   steps:
+  #     - run: echo "Hi I'm runner job 1!"
+  # runner2:
+  #   machine: true
+  #   resource_class: jsjimenez51/scaling-docker-runner
+  #   steps:
+  #     - run: echo "Hi I'm runner job 2!"
+  # runner3:
+  #   machine: true
+  #   resource_class: jsjimenez51/scaling-docker-runner
+  #   steps:
+  #     - run: echo "Hi I'm runner job 3!"
+  # runner4:
+  #   machine: true
+  #   resource_class: jsjimenez51/scaling-docker-runner
+  #   steps:
+  #     - run: echo "Hi I'm runner job 4!!"
+  # runner5:
+  #   machine: true
+  #   resource_class: jsjimenez51/scaling-docker-runner
+  #   steps:
+  #     - run: echo "Hi I'm runner job 5!"
+  # runner6:
+  #   machine: true
+  #   resource_class: jsjimenez51/scaling-docker-runner
+  #   steps:
+  #     - run: echo "Hi I'm runner job 6!"
