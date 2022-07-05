@@ -24,8 +24,8 @@ jobs:
   runner-test:
     machine: true
     resource_class: jsjimenez51/scaling-docker-class
-      steps:
-        -run: echo "Hi I got my scaling class running"
+    steps:
+      -run: echo "Hi I got my scaling class running"
   
   # linux-runner: 
   #   machine: true
