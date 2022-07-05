@@ -4,6 +4,18 @@ workflows:
   testing:
     jobs:
       - runner-test
+jobs:
+  runner-test:
+    machine: true
+    resource_class: jsjimenez51/scaling-docker-class
+    steps:
+      - run: echo "Hi I'm on Runners!"
+
+
+# workflows:
+#   testing:
+#     jobs:
+#       - runner-test
  
   #   jobs:
   #     - runner1
@@ -19,12 +31,7 @@ workflows:
   #   jobs:
   #     - linux-runner
 
-jobs:
-  runner-test:
-    machine: true
-    resource_class: jsjimenez51/scaling-docker-class
-    steps:
-      - run: echo "Hi I'm on Runners!"
+# jobs:
   
   # linux-runner: 
   #   machine: true
