@@ -26,7 +26,7 @@ jobs:
 
   scale:
     machine: true
-    resource_class: jsjimenez51/docker-class
+    resource_class: jsjimenez51/scaling-docker-runner
     steps:
       - checkout
       - run: uname
@@ -34,31 +34,31 @@ jobs:
 
   runner1:
     machine: true
-    resource_class: jsjimenez51/docker-class
+    resource_class: jsjimenez51/scaling-docker-runner
     steps:
       - run: echo "Hi I'm runner job 1!"
   runner2:
     machine: true
-    resource_class: jsjimenez51/docker-class
+    resource_class: jsjimenez51/scaling-docker-runner
     steps:
       - run: echo "Hi I'm runner job 2!"
   runner3:
     machine: true
-    resource_class: jsjimenez51/docker-class
+    resource_class: jsjimenez51/scaling-docker-runner
     steps:
       - run: echo "Hi I'm runner job 3!"
   runner4:
     machine: true
-    resource_class: jsjimenez51/docker-class
+    resource_class: jsjimenez51/scaling-docker-runner
     steps:
       - run: echo "Hi I'm runner job 4!!"
   runner5:
     machine: true
-    resource_class: jsjimenez51/docker-class
+    resource_class: jsjimenez51/scaling-docker-runner
     steps:
       - run: echo "Hi I'm runner job 5!"
   runner6:
     machine: true
-    resource_class: jsjimenez51/docker-class
+    resource_class: jsjimenez51/scaling-docker-runner
     steps:
       - run: echo "Hi I'm runner job 6!"
